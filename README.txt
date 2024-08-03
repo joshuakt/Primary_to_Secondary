@@ -8,10 +8,12 @@ REQUIREMENTS: Python 3.0, including numpy, pylab, scipy, joblib, and numba modul
 
 HOW TO RUN CODE:
 (1) Put all the python scripts in the same directory, and ensure python is working in this directory.
-(2) Check desired input settings in Input_settings.py
-(2) Select planet in Main_NEW.py and check desired parameter ranges, number of iterations, and number of cores for parallelization. 
-(4) IMPORTANT: If planet mass and radius is being modified from defaults, this must be updated in both the scripts Main_NEW.py and Melt_volatile_partitoning_EXP_v4.py.
-(3) Run Main_NEW.py to execute Monte Carlo calculations over chosen parameter ranges.
+(2) Download climate grid from Zenodo, Ev_array_improved_corrected_CO_as_N2.npy, and place this in the same directory as python scripts. File available here: 10.5281/zenodo.13161895
+(3) Check desired input settings in Input_settings.py
+(4) Select planet in Main_NEW.py and check desired parameter ranges, number of iterations, and number of cores for parallelization. 
+(5) IMPORTANT: If planet mass and radius is being modified from defaults, this must be updated in both the scripts Main_NEW.py and Melt_volatile_partitoning_EXP_v4.py.
+(6) Run Main_NEW.py to execute Monte Carlo calculations over chosen parameter ranges.
+(7) Use plotting scripts provided to inspect outputs
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 EXPLANATION OF CODE STRUCTURE:
@@ -35,7 +37,7 @@ For plotting Monte Carlo outputs - not an essential part of code.
 Contains functions used to calculate surface temperature given volatile inventories, melt volume, and absorbed stellar radiation, ASR. Will call functions in the file radiative_functions_6dim_CO_as_N2 to obtain radiative transfer grid outputs.
 
 %% radiative_functions_6dim_CO_as_N2.py
-Set of functions for calling and interpolating between grid of outputs from radiative convective calculations. Functions exist for calling OLR, atmospheric water fraction, and upper atmosphere abundances for bulk constuents. Radiative-convective grid outputs are stored in the large file "Ev_array_improved_corrected_CO_as_N2"
+Set of functions for calling and interpolating between grid of outputs from radiative convective calculations. Functions exist for calling OLR, atmospheric water fraction, and upper atmosphere abundances for bulk constuents. Radiative-convective grid outputs are stored in the large file "Ev_array_improved_corrected_CO_as_N2" which is permanently archived on Zenodo:
 
 %% stellar_funs.py
 Loads stellar evolution parameterizations from Baraffe et al. ("Baraffe3.txt" for the sun or "Baraffe2015.txt" for different stellar masses), and returns total luminosity and XUV lumionsity as a function of time. See main text for expressions for XUV evolution relative to bolometric luminosity evolution. Trappist-1 XUV-evolution parameter from Birky et al. are loaded from the file "trappist_posterior_samples_updated.npy".
