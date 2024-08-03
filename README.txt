@@ -2,7 +2,7 @@ PACMAN-P: Planetary Atmospheres, Crust, and MAntle evolution model for Primary a
 A Coupled Magma Ocean + Atmosphere + Redox Evolution Model
 Version 1.0
 
-This set of python scripts runs the coupled magma ocean, climate, escape, and redox evolution model, as described in Krissansen-Totton et al. (2024) "The loss of primary atmospheres does not preclude habitability: A self-consistent model of the transition from primary to secondary atmospheres". This version of the code (V1.0) will be permanently archived upon publication.
+This set of python scripts runs the coupled magma ocean, climate, escape, and redox evolution model, as described in Krissansen-Totton et al. (2024) "The evolutionary transition from sub-Neptune to terrestrial planet does not preclude habitability". 
 
 REQUIREMENTS: Python 3.0, including numpy, pylab, scipy, joblib, and numba modules.
 
